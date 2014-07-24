@@ -1,0 +1,747 @@
+Release 14.4 - xst P.49d (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Reading design: lab5top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "lab5top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "lab5top"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : lab5top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"C:/Users/f000g56/Downloads/Lab4_stopwatch/Lab4_stopwatch"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\TenBitShiftRegister.vhd" into library work
+Parsing entity <TenBitShiftRegister>.
+Parsing architecture <Behavioral> of entity <tenbitshiftregister>.
+Parsing VHDL file "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\Synchronizer.vhd" into library work
+Parsing entity <Synchronizer>.
+Parsing architecture <Behavioral> of entity <synchronizer>.
+Parsing VHDL file "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd" into library work
+Parsing entity <SerialRxController>.
+Parsing architecture <Behavioral> of entity <serialrxcontroller>.
+Parsing VHDL file "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\OutputRegister.vhd" into library work
+Parsing entity <OutputRegister>.
+Parsing architecture <Behavioral> of entity <outputregister>.
+Parsing VHDL file "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialTX.vhd" into library work
+Parsing entity <SerialTx>.
+Parsing architecture <Behavioral> of entity <serialtx>.
+Parsing VHDL file "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRx.vhd" into library work
+Parsing entity <SerialRx>.
+Parsing architecture <Behavioral> of entity <serialrx>.
+Parsing VHDL file "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\lab5top.vhd" into library work
+Parsing entity <lab5top>.
+Parsing architecture <Structural> of entity <lab5top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <lab5top> (architecture <Structural>) from library <work>.
+
+Elaborating entity <SerialRx> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <Synchronizer> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <TenBitShiftRegister> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:1127 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\TenBitShiftRegister.vhd" Line 70: Assignment to slow_clk ignored, since the identifier is never used
+
+Elaborating entity <SerialRxController> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd" Line 61: Using initial value '0' for ishift_prev since it is never assigned
+WARNING:HDLCompiler:92 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd" Line 125: itxout_prev should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd" Line 126: ishift_prev should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd" Line 127: iload_prev should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd" Line 133: data_in should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd" Line 148: bits_received should be on the sensitivity list of the process
+WARNING:HDLCompiler:1127 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd" Line 168: Assignment to prev_bits_received ignored, since the identifier is never used
+
+Elaborating entity <OutputRegister> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:634 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRx.vhd" Line 76: Net <iClear> does not have a driver.
+
+Elaborating entity <SerialTx> (architecture <Behavioral>) from library <work>.
+INFO:HDLCompiler:679 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialTX.vhd" Line 119. Case statement is complete. others clause is never selected
+WARNING:HDLCompiler:89 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\lab5top.vhd" Line 90: <mux7seg> remains a black-box since it has no binding entity.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <lab5top>.
+    Related source file is "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\lab5top.vhd".
+INFO:Xst:3210 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\lab5top.vhd" line 133: Output port <tx_done_tick> of the instance <TRX> is unconnected or connected to loadless signal.
+    Found 32-bit register for signal <clkdiv>.
+    Found 1-bit register for signal <clk_en>.
+    Found 32-bit adder for signal <clkdiv[31]_GND_5_o_add_1_OUT> created at line 117.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred  33 D-type flip-flop(s).
+Unit <lab5top> synthesized.
+
+Synthesizing Unit <SerialRx>.
+    Related source file is "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRx.vhd".
+INFO:Xst:3210 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRx.vhd" line 97: Output port <DATA_OUT> of the instance <Controller> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <iClear> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <SerialRx> synthesized.
+
+Synthesizing Unit <Synchronizer>.
+    Related source file is "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\Synchronizer.vhd".
+    Found 1-bit register for signal <Dout>.
+    Found 1-bit register for signal <Dsync>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <Synchronizer> synthesized.
+
+Synthesizing Unit <TenBitShiftRegister>.
+    Related source file is "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\TenBitShiftRegister.vhd".
+    Found 8-bit register for signal <iOutputRegister>.
+    Found 10-bit register for signal <iData>.
+    Summary:
+	inferred  18 D-type flip-flop(s).
+Unit <TenBitShiftRegister> synthesized.
+
+Synthesizing Unit <SerialRxController>.
+    Related source file is "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd".
+WARNING:Xst:653 - Signal <DATA_OUT> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 1-bit register for signal <read_bit>.
+    Found 32-bit register for signal <brg_ticks>.
+    Found 32-bit register for signal <bits_received>.
+    Found 3-bit register for signal <state>.
+    Found 1-bit register for signal <SHIFT>.
+    Found 1-bit register for signal <RX_DONE>.
+    Found 1-bit register for signal <LOAD>.
+    Found 1-bit register for signal <iTxOut_prev>.
+    Found 1-bit register for signal <iLoad_prev>.
+    Found 1-bit register for signal <rate_identified>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 4                                              |
+    | Clock              | CLK (rising_edge)                              |
+    | Power Up State     | waiting                                        |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit adder for signal <brg_ticks[31]_GND_9_o_add_4_OUT> created at line 93.
+    Found 32-bit adder for signal <bits_received[31]_GND_9_o_add_9_OUT> created at line 112.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  71 D-type flip-flop(s).
+	inferred  10 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <SerialRxController> synthesized.
+
+Synthesizing Unit <OutputRegister>.
+    Related source file is "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\OutputRegister.vhd".
+    Found 8-bit register for signal <iData>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <OutputRegister> synthesized.
+
+Synthesizing Unit <SerialTx>.
+    Related source file is "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialTX.vhd".
+    Found 1-bit register for signal <br_tick>.
+    Found 10-bit register for signal <tx_reg>.
+    Found 4-bit register for signal <tx_ctr>.
+    Found 3-bit register for signal <curr_state>.
+    Found 12-bit register for signal <br_cnt>.
+    Found finite state machine <FSM_1> for signal <curr_state>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 10                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 3                                              |
+    | Clock              | Clk (rising_edge)                              |
+    | Power Up State     | sidle                                          |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 12-bit adder for signal <br_cnt[11]_GND_11_o_add_1_OUT> created at line 1241.
+    Found 4-bit subtractor for signal <GND_11_o_GND_11_o_sub_9_OUT<3:0>> created at line 1308.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  27 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <SerialTx> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 5
+ 12-bit adder                                          : 1
+ 32-bit adder                                          : 3
+ 4-bit subtractor                                      : 1
+# Registers                                            : 20
+ 1-bit register                                        : 11
+ 10-bit register                                       : 2
+ 12-bit register                                       : 1
+ 32-bit register                                       : 3
+ 4-bit register                                        : 1
+ 8-bit register                                        : 2
+# Multiplexers                                         : 12
+ 1-bit 2-to-1 multiplexer                              : 10
+ 10-bit 2-to-1 multiplexer                             : 1
+ 4-bit 2-to-1 multiplexer                              : 1
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <mux7seg.ngc>.
+Loading core <mux7seg> for timing and area information for instance <display>.
+INFO:Xst:2261 - The FF/Latch <iTxOut_prev> in Unit <Controller> is equivalent to the following FF/Latch, which will be removed : <RX_DONE> 
+INFO:Xst:2261 - The FF/Latch <iLoad_prev> in Unit <Controller> is equivalent to the following FF/Latch, which will be removed : <LOAD> 
+WARNING:Xst:2677 - Node <iData_0> of sequential type is unconnected in block <ShiftRegister>.
+
+Synthesizing (advanced) Unit <SerialRxController>.
+The following registers are absorbed into counter <brg_ticks>: 1 register on signal <brg_ticks>.
+The following registers are absorbed into counter <bits_received>: 1 register on signal <bits_received>.
+Unit <SerialRxController> synthesized (advanced).
+
+Synthesizing (advanced) Unit <SerialTx>.
+The following registers are absorbed into counter <br_cnt>: 1 register on signal <br_cnt>.
+The following registers are absorbed into counter <tx_ctr>: 1 register on signal <tx_ctr>.
+Unit <SerialTx> synthesized (advanced).
+
+Synthesizing (advanced) Unit <lab5top>.
+The following registers are absorbed into counter <clkdiv>: 1 register on signal <clkdiv>.
+Unit <lab5top> synthesized (advanced).
+WARNING:Xst:2677 - Node <iData_0> of sequential type is unconnected in block <TenBitShiftRegister>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 5
+ 12-bit up counter                                     : 1
+ 32-bit up counter                                     : 3
+ 4-bit down counter                                    : 1
+# Registers                                            : 46
+ Flip-Flops                                            : 46
+# Multiplexers                                         : 10
+ 1-bit 2-to-1 multiplexer                              : 9
+ 10-bit 2-to-1 multiplexer                             : 1
+# FSMs                                                 : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <iTxOut_prev> in Unit <SerialRxController> is equivalent to the following FF/Latch, which will be removed : <RX_DONE> 
+INFO:Xst:2261 - The FF/Latch <iLoad_prev> in Unit <SerialRxController> is equivalent to the following FF/Latch, which will be removed : <LOAD> 
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <SRX/Controller/FSM_0> on signal <state[1:3]> with user encoding.
+---------------------------
+ State         | Encoding
+---------------------------
+ waiting       | 000
+ pulsecounting | 001
+ shiftbit      | 010
+ transferbits  | 011
+ rx_done_tick  | 100
+---------------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <TRX/FSM_1> on signal <curr_state[1:3]> with gray encoding.
+--------------------
+ State  | Encoding
+--------------------
+ sidle  | 000
+ ssync  | 001
+ sload  | 011
+ sshift | 010
+ sdone  | 110
+ swait  | 111
+--------------------
+WARNING:Xst:1293 - FF/Latch <tx_reg_9> has a constant value of 1 in block <SerialTx>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <SerialRx> ...
+
+Optimizing unit <Synchronizer> ...
+
+Optimizing unit <TenBitShiftRegister> ...
+
+Optimizing unit <OutputRegister> ...
+
+Optimizing unit <lab5top> ...
+
+Optimizing unit <SerialRxController> ...
+
+Optimizing unit <SerialTx> ...
+WARNING:Xst:1293 - FF/Latch <bits_received_31> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_30> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_29> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_28> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_27> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_26> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_25> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_24> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_23> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_22> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_21> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_20> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_19> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_18> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_17> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_16> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_15> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_14> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_13> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_12> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_11> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_10> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_9> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_8> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_7> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_6> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_5> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_4> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <br_cnt_7> has a constant value of 0 in block <TRX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <br_cnt_8> has a constant value of 0 in block <TRX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <br_cnt_9> has a constant value of 0 in block <TRX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <br_cnt_10> has a constant value of 0 in block <TRX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <br_cnt_11> has a constant value of 0 in block <TRX>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <clkdiv_31> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_30> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_29> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_28> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_27> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_26> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_25> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_24> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_23> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_22> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_21> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_20> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_19> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_18> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_17> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_16> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_15> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_14> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_13> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_12> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_11> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_10> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_9> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_8> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_7> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_6> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_5> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_4> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <clkdiv_3> has a constant value of 0 in block <lab5top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <iLoad_prev> in Unit <Controller> is equivalent to the following FF/Latch, which will be removed : <state_FSM_FFd1> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block lab5top, actual ratio is 0.
+FlipFlop SRX/Controller/rate_identified has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <DFlopSync> :
+	Found 2-bit shift register for signal <Dout>.
+Unit <DFlopSync> processed.
+
+Processing Unit <ShiftRegister> :
+	Found 2-bit shift register for signal <iData_8>.
+Unit <ShiftRegister> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 95
+ Flip-Flops                                            : 95
+# Shift Registers                                      : 2
+ 2-bit shift register                                  : 2
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : lab5top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 287
+#      GND                         : 6
+#      INV                         : 5
+#      LUT1                        : 55
+#      LUT2                        : 3
+#      LUT3                        : 7
+#      LUT4                        : 18
+#      LUT5                        : 19
+#      LUT6                        : 53
+#      MUXCY                       : 55
+#      MUXF7                       : 1
+#      VCC                         : 5
+#      XORCY                       : 60
+# FlipFlops/Latches                : 113
+#      FD                          : 67
+#      FDE                         : 32
+#      FDR                         : 10
+#      FDRE                        : 4
+# Shift Registers                  : 2
+#      SRLC16E                     : 2
+# Clock Buffers                    : 2
+#      BUFG                        : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 17
+#      IBUF                        : 2
+#      OBUF                        : 15
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             113  out of  18224     0%  
+ Number of Slice LUTs:                  162  out of   9112     1%  
+    Number used as Logic:               160  out of   9112     1%  
+    Number used as Memory:                2  out of   2176     0%  
+       Number used as SRL:                2
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    186
+   Number with an unused Flip Flop:      73  out of    186    39%  
+   Number with an unused LUT:            24  out of    186    12%  
+   Number of fully used LUT-FF pairs:    89  out of    186    47%  
+   Number of unique control sets:        14
+
+IO Utilization: 
+ Number of IOs:                          20
+ Number of bonded IOBs:                  18  out of    232     7%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+Clk                                | BUFGP                  | 20    |
+clk_en                             | BUFG                   | 95    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.279ns (Maximum Frequency: 233.721MHz)
+   Minimum input arrival time before clock: 2.458ns
+   Maximum output required time after clock: 6.244ns
+   Maximum combinational path delay: 4.476ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Clk'
+  Clock period: 2.612ns (frequency: 382.922MHz)
+  Total number of paths / destination ports: 155 / 25
+-------------------------------------------------------------------------
+Delay:               2.612ns (Levels of Logic = 1)
+  Source:            clkdiv_2 (FF)
+  Destination:       clkdiv_0 (FF)
+  Source Clock:      Clk rising
+  Destination Clock: Clk rising
+
+  Data Path: clkdiv_2 to clkdiv_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q              3   0.447   0.879  clkdiv_2 (clkdiv_2)
+     LUT3:I0->O            3   0.205   0.650  GND_5_o_clkdiv[31]_equal_1_o<31>1 (GND_5_o_clkdiv[31]_equal_1_o)
+     FDR:R                     0.430          clkdiv_0
+    ----------------------------------------
+    Total                      2.612ns (1.082ns logic, 1.530ns route)
+                                       (41.4% logic, 58.6% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk_en'
+  Clock period: 4.279ns (frequency: 233.721MHz)
+  Total number of paths / destination ports: 3215 / 139
+-------------------------------------------------------------------------
+Delay:               4.279ns (Levels of Logic = 3)
+  Source:            SRX/Controller/brg_ticks_5 (FF)
+  Destination:       SRX/Controller/brg_ticks_15 (FF)
+  Source Clock:      clk_en rising
+  Destination Clock: clk_en rising
+
+  Data Path: SRX/Controller/brg_ticks_5 to SRX/Controller/brg_ticks_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               4   0.447   1.028  brg_ticks_5 (brg_ticks_5)
+     LUT5:I0->O            2   0.203   0.961  GND_9_o_brg_ticks[31]_equal_1_o<31>15_SW0 (N10)
+     LUT6:I1->O           17   0.203   1.132  GND_9_o_brg_ticks[31]_equal_4_o<31> (GND_9_o_brg_ticks[31]_equal_4_o)
+     LUT6:I4->O            1   0.203   0.000  brg_ticks_31_rstpot (brg_ticks_31_rstpot)
+     FD:D                      0.102          brg_ticks_31
+    ----------------------------------------
+    Total                      4.279ns (1.158ns logic, 3.121ns route)
+                                       (27.1% logic, 72.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk_en'
+  Total number of paths / destination ports: 4 / 4
+-------------------------------------------------------------------------
+Offset:              2.458ns (Levels of Logic = 3)
+  Source:            tx_start_p (PAD)
+  Destination:       TRX/curr_state_FSM_FFd1 (FF)
+  Destination Clock: clk_en rising
+
+  Data Path: tx_start_p to TRX/curr_state_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.222   0.931  tx_start_p_IBUF (start_p_OBUF)
+     begin scope: 'TRX:tx_start'
+     LUT5:I1->O            1   0.203   0.000  curr_state_FSM_FFd1-In11 (curr_state_FSM_FFd1-In)
+     FD:D                      0.102          curr_state_FSM_FFd1
+    ----------------------------------------
+    Total                      2.458ns (1.527ns logic, 0.931ns route)
+                                       (62.1% logic, 37.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk_en'
+  Total number of paths / destination ports: 63 / 11
+-------------------------------------------------------------------------
+Offset:              5.922ns (Levels of Logic = 5)
+  Source:            SRX/DataOut/iData_4 (FF)
+  Destination:       segments<6> (PAD)
+  Source Clock:      clk_en rising
+
+  Data Path: SRX/DataOut/iData_4 to segments<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              3   0.447   0.898  iData_4 (iData_4)
+     end scope: 'SRX/DataOut:rx_data_out<4>'
+     end scope: 'SRX:rx_data<4>'
+     begin scope: 'display:y1<0>'
+     LUT6:I2->O            7   0.203   1.021  Mmux_muxy<0>11 (muxy<0>)
+     LUT4:I0->O            1   0.203   0.579  seg<2>1 (seg<4>)
+     end scope: 'display:seg<4>'
+     OBUF:I->O                 2.571          segments_2_OBUF (segments<2>)
+    ----------------------------------------
+    Total                      5.922ns (3.424ns logic, 2.498ns route)
+                                       (57.8% logic, 42.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk'
+  Total number of paths / destination ports: 64 / 11
+-------------------------------------------------------------------------
+Offset:              6.244ns (Levels of Logic = 4)
+  Source:            display/adcount_0 (FF)
+  Destination:       segments<6> (PAD)
+  Source Clock:      Clk rising
+
+  Data Path: display/adcount_0 to segments<6>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             10   0.447   1.221  adcount_0 (adcount<0>)
+     LUT6:I0->O            7   0.203   1.021  Mmux_muxy<0>11 (muxy<0>)
+     LUT4:I0->O            1   0.203   0.579  seg<2>1 (seg<4>)
+     end scope: 'display:seg<4>'
+     OBUF:I->O                 2.571          segments_2_OBUF (segments<2>)
+    ----------------------------------------
+    Total                      6.244ns (3.424ns logic, 2.820ns route)
+                                       (54.8% logic, 45.2% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               4.476ns (Levels of Logic = 2)
+  Source:            tx_start_p (PAD)
+  Destination:       start_p (PAD)
+
+  Data Path: tx_start_p to start_p
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   1.222   0.683  tx_start_p_IBUF (start_p_OBUF)
+     OBUF:I->O                 2.571          start_p_OBUF (start_p)
+    ----------------------------------------
+    Total                      4.476ns (3.793ns logic, 0.683ns route)
+                                       (84.7% logic, 15.3% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock Clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clk            |    2.612|         |         |         |
+---------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clk_en
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk_en         |    4.279|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.33 secs
+ 
+--> 
+
+Total memory usage is 275568 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   77 (   0 filtered)
+Number of infos    :    7 (   0 filtered)
+

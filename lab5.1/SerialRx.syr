@@ -1,0 +1,546 @@
+Release 14.4 - xst P.49d (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.12 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.13 secs
+ 
+--> Reading design: SerialRx.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "SerialRx.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "SerialRx"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : SerialRx
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : Yes
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"C:/Users/f000g56/Downloads/Lab4_stopwatch/Lab4_stopwatch"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\TenBitShiftRegister.vhd" into library work
+Parsing entity <TenBitShiftRegister>.
+Parsing architecture <Behavioral> of entity <tenbitshiftregister>.
+Parsing VHDL file "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\Synchronizer.vhd" into library work
+Parsing entity <Synchronizer>.
+Parsing architecture <Behavioral> of entity <synchronizer>.
+Parsing VHDL file "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd" into library work
+Parsing entity <SerialRxController>.
+Parsing architecture <Behavioral> of entity <serialrxcontroller>.
+Parsing VHDL file "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\OutputRegister.vhd" into library work
+Parsing entity <OutputRegister>.
+Parsing architecture <Behavioral> of entity <outputregister>.
+Parsing VHDL file "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRx.vhd" into library work
+Parsing entity <SerialRx>.
+Parsing architecture <Behavioral> of entity <serialrx>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <SerialRx> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <Synchronizer> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <TenBitShiftRegister> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:1127 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\TenBitShiftRegister.vhd" Line 70: Assignment to slow_clk ignored, since the identifier is never used
+
+Elaborating entity <SerialRxController> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:871 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd" Line 61: Using initial value '0' for ishift_prev since it is never assigned
+WARNING:HDLCompiler:92 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd" Line 125: itxout_prev should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd" Line 126: ishift_prev should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd" Line 127: iload_prev should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd" Line 133: data_in should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd" Line 148: bits_received should be on the sensitivity list of the process
+WARNING:HDLCompiler:1127 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd" Line 168: Assignment to prev_bits_received ignored, since the identifier is never used
+
+Elaborating entity <OutputRegister> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:634 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRx.vhd" Line 76: Net <iClear> does not have a driver.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <SerialRx>.
+    Related source file is "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRx.vhd".
+INFO:Xst:3210 - "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRx.vhd" line 97: Output port <DATA_OUT> of the instance <Controller> is unconnected or connected to loadless signal.
+WARNING:Xst:653 - Signal <iClear> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Summary:
+	no macro.
+Unit <SerialRx> synthesized.
+
+Synthesizing Unit <Synchronizer>.
+    Related source file is "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\Synchronizer.vhd".
+    Found 1-bit register for signal <Dout>.
+    Found 1-bit register for signal <Dsync>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <Synchronizer> synthesized.
+
+Synthesizing Unit <TenBitShiftRegister>.
+    Related source file is "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\TenBitShiftRegister.vhd".
+    Found 8-bit register for signal <iOutputRegister>.
+    Found 10-bit register for signal <iData>.
+    Summary:
+	inferred  18 D-type flip-flop(s).
+Unit <TenBitShiftRegister> synthesized.
+
+Synthesizing Unit <SerialRxController>.
+    Related source file is "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\SerialRxController.vhd".
+WARNING:Xst:653 - Signal <DATA_OUT> is used but never assigned. This sourceless signal will be automatically connected to value GND.
+    Found 1-bit register for signal <read_bit>.
+    Found 32-bit register for signal <brg_ticks>.
+    Found 32-bit register for signal <bits_received>.
+    Found 3-bit register for signal <state>.
+    Found 1-bit register for signal <SHIFT>.
+    Found 1-bit register for signal <RX_DONE>.
+    Found 1-bit register for signal <LOAD>.
+    Found 1-bit register for signal <iTxOut_prev>.
+    Found 1-bit register for signal <iLoad_prev>.
+    Found 1-bit register for signal <rate_identified>.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 3                                              |
+    | Outputs            | 4                                              |
+    | Clock              | CLK (rising_edge)                              |
+    | Power Up State     | waiting                                        |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 32-bit adder for signal <brg_ticks[31]_GND_7_o_add_4_OUT> created at line 93.
+    Found 32-bit adder for signal <bits_received[31]_GND_7_o_add_9_OUT> created at line 112.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred  71 D-type flip-flop(s).
+	inferred  10 Multiplexer(s).
+	inferred   1 Finite State Machine(s).
+Unit <SerialRxController> synthesized.
+
+Synthesizing Unit <OutputRegister>.
+    Related source file is "\\thayerfs.thayer.dartmouth.edu\f000g56\Engs31\lab5.1\OutputRegister.vhd".
+    Found 8-bit register for signal <iData>.
+    Summary:
+	inferred   8 D-type flip-flop(s).
+Unit <OutputRegister> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 32-bit adder                                          : 2
+# Registers                                            : 14
+ 1-bit register                                        : 9
+ 10-bit register                                       : 1
+ 32-bit register                                       : 2
+ 8-bit register                                        : 2
+# Multiplexers                                         : 10
+ 1-bit 2-to-1 multiplexer                              : 10
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+INFO:Xst:2261 - The FF/Latch <iTxOut_prev> in Unit <Controller> is equivalent to the following FF/Latch, which will be removed : <RX_DONE> 
+INFO:Xst:2261 - The FF/Latch <iLoad_prev> in Unit <Controller> is equivalent to the following FF/Latch, which will be removed : <LOAD> 
+WARNING:Xst:2677 - Node <iData_0> of sequential type is unconnected in block <ShiftRegister>.
+
+Synthesizing (advanced) Unit <SerialRxController>.
+The following registers are absorbed into counter <brg_ticks>: 1 register on signal <brg_ticks>.
+The following registers are absorbed into counter <bits_received>: 1 register on signal <bits_received>.
+Unit <SerialRxController> synthesized (advanced).
+WARNING:Xst:2677 - Node <iData_0> of sequential type is unconnected in block <TenBitShiftRegister>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Counters                                             : 2
+ 32-bit up counter                                     : 2
+# Registers                                            : 34
+ Flip-Flops                                            : 34
+# Multiplexers                                         : 9
+ 1-bit 2-to-1 multiplexer                              : 9
+# FSMs                                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+INFO:Xst:2261 - The FF/Latch <iTxOut_prev> in Unit <SerialRxController> is equivalent to the following FF/Latch, which will be removed : <RX_DONE> 
+INFO:Xst:2261 - The FF/Latch <iLoad_prev> in Unit <SerialRxController> is equivalent to the following FF/Latch, which will be removed : <LOAD> 
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <Controller/FSM_0> on signal <state[1:3]> with user encoding.
+---------------------------
+ State         | Encoding
+---------------------------
+ waiting       | 000
+ pulsecounting | 001
+ shiftbit      | 010
+ transferbits  | 011
+ rx_done_tick  | 100
+---------------------------
+
+Optimizing unit <SerialRx> ...
+
+Optimizing unit <Synchronizer> ...
+
+Optimizing unit <TenBitShiftRegister> ...
+
+Optimizing unit <OutputRegister> ...
+
+Optimizing unit <SerialRxController> ...
+WARNING:Xst:1293 - FF/Latch <bits_received_31> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_30> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_29> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_28> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_27> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_26> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_25> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_24> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_23> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_22> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_21> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_20> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_19> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_18> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_17> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_16> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_15> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_14> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_13> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_12> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_11> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_10> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_9> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_8> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_7> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_6> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_5> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <bits_received_4> has a constant value of 0 in block <Controller>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <iLoad_prev> in Unit <Controller> is equivalent to the following FF/Latch, which will be removed : <state_FSM_FFd1> 
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block SerialRx, actual ratio is 0.
+FlipFlop Controller/rate_identified has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+Processing Unit <DFlopSync> :
+	Found 2-bit shift register for signal <Dout>.
+Unit <DFlopSync> processed.
+
+Processing Unit <ShiftRegister> :
+	Found 2-bit shift register for signal <iData_8>.
+Unit <ShiftRegister> processed.
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 67
+ Flip-Flops                                            : 67
+# Shift Registers                                      : 2
+ 2-bit shift register                                  : 2
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : SerialRx.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 166
+#      GND                         : 3
+#      INV                         : 2
+#      LUT1                        : 34
+#      LUT3                        : 4
+#      LUT4                        : 3
+#      LUT5                        : 5
+#      LUT6                        : 42
+#      MUXCY                       : 34
+#      MUXF7                       : 1
+#      VCC                         : 2
+#      XORCY                       : 36
+# FlipFlops/Latches                : 69
+#      FD                          : 48
+#      FDE                         : 17
+#      FDRE                        : 4
+# Shift Registers                  : 2
+#      SRLC16E                     : 2
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 11
+#      IBUF                        : 1
+#      OBUF                        : 10
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:              69  out of  18224     0%  
+ Number of Slice LUTs:                   92  out of   9112     1%  
+    Number used as Logic:                90  out of   9112     0%  
+    Number used as Memory:                2  out of   2176     0%  
+       Number used as SRL:                2
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    116
+   Number with an unused Flip Flop:      47  out of    116    40%  
+   Number with an unused LUT:            24  out of    116    20%  
+   Number of fully used LUT-FF pairs:    45  out of    116    38%  
+   Number of unique control sets:         6
+
+IO Utilization: 
+ Number of IOs:                          12
+ Number of bonded IOBs:                  12  out of    232     5%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+Clk                                | BUFGP                  | 71    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.279ns (Maximum Frequency: 233.721MHz)
+   Minimum input arrival time before clock: 1.801ns
+   Maximum output required time after clock: 3.874ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Clk'
+  Clock period: 4.279ns (frequency: 233.721MHz)
+  Total number of paths / destination ports: 2984 / 95
+-------------------------------------------------------------------------
+Delay:               4.279ns (Levels of Logic = 3)
+  Source:            Controller/brg_ticks_5 (FF)
+  Destination:       Controller/brg_ticks_15 (FF)
+  Source Clock:      Clk rising
+  Destination Clock: Clk rising
+
+  Data Path: Controller/brg_ticks_5 to Controller/brg_ticks_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               4   0.447   1.028  brg_ticks_5 (brg_ticks_5)
+     LUT5:I0->O            2   0.203   0.961  GND_7_o_brg_ticks[31]_equal_1_o<31>15_SW0 (N10)
+     LUT6:I1->O           17   0.203   1.132  GND_7_o_brg_ticks[31]_equal_4_o<31> (GND_7_o_brg_ticks[31]_equal_4_o)
+     LUT6:I4->O            1   0.203   0.000  brg_ticks_31_rstpot (brg_ticks_31_rstpot)
+     FD:D                      0.102          brg_ticks_31
+    ----------------------------------------
+    Total                      4.279ns (1.158ns logic, 3.121ns route)
+                                       (27.1% logic, 72.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Clk'
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Offset:              1.801ns (Levels of Logic = 2)
+  Source:            RsRx (PAD)
+  Destination:       DFlopSync/Mshreg_Dout (FF)
+  Destination Clock: Clk rising
+
+  Data Path: RsRx to DFlopSync/Mshreg_Dout
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.222   0.579  RsRx_IBUF (RsRx_IBUF)
+     begin scope: 'DFlopSync:Din'
+     SRLC16E:D                -0.060          Mshreg_Dout
+    ----------------------------------------
+    Total                      1.801ns (1.222ns logic, 0.579ns route)
+                                       (67.9% logic, 32.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Clk'
+  Total number of paths / destination ports: 10 / 10
+-------------------------------------------------------------------------
+Offset:              3.874ns (Levels of Logic = 2)
+  Source:            Controller/SHIFT (FF)
+  Destination:       rx_shift (PAD)
+  Source Clock:      Clk rising
+
+  Data Path: Controller/SHIFT to rx_shift
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q              10   0.447   0.856  SHIFT (SHIFT)
+     end scope: 'Controller:SHIFT'
+     OBUF:I->O                 2.571          rx_shift_OBUF (rx_shift)
+    ----------------------------------------
+    Total                      3.874ns (3.018ns logic, 0.856ns route)
+                                       (77.9% logic, 22.1% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock Clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+Clk            |    4.279|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 5.10 secs
+ 
+--> 
+
+Total memory usage is 262640 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   41 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
+
